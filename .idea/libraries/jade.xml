@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jade">
+    <CLASSES>
+      <root url="jar://C:/lib/jade.jar!/" />
+      <root url="jar://C:/lib/pi4j-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
