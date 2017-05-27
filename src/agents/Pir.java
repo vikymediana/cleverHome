@@ -74,7 +74,7 @@ public class Pir extends Agent {
 
 
 	try{
-		Thread.sleep(100);
+		Thread.sleep(300);
 	}catch(Exception e){}
         
 	  System.out.println("Salgo del sleep");
