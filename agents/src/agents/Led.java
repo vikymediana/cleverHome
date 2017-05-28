@@ -33,7 +33,7 @@ public class Led extends Agent {
                                 && message.getContentObject() instanceof  Message) {
                             Message mesageContent = (Message)message.getContentObject();
 
-                            if (mesageContent.getStatus() == Message.Status.OFF){
+                            if (mesageContent.getStatus() == null){
 				System.out.println("LED: LLEGA MENSAJE : OFF");
                                 pin.low();
                             }else {

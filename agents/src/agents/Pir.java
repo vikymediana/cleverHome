@@ -11,6 +11,7 @@ import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.ACLMessage;
 import message.Message;
+import model.InternalStatusAgent;
 
 /**
  * Created by jlarque on 26/05/2017.
@@ -40,12 +41,12 @@ public class Pir extends Agent {
                     try {
                         if (event.getState().isHigh()) {
                             System.out.println("Motion Detected!");
-                            message.setContentObject(new Message(Message.Status.ON));
+                            message.setContentObject(new Message(null));
                         }
 
                         if (event.getState().isLow()) {
                             System.out.println("All is quiet...");
-                            message.setContentObject(new Message(Message.Status.OFF));
+                            message.setContentObject(new Message(null));
                         }
                     } catch (Exception e) {
                         System.out.println("ERROR PIR");
