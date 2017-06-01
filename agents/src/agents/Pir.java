@@ -46,7 +46,7 @@ public class Pir extends Agent {
 
                         if (event.getState().isLow()) {
                             System.out.println("All is quiet...");
-                            message.setContentObject(new Message(new InternalStatusAgent(InternalStatusAgent.Status.OFF, InternalStatusAgent.AgentType.LED)));
+                            message.setContentObject(new Message(new InternalStatusAgent(InternalStatusAgent.Status.OFF, InternalStatusAgent.AgentType.PIR)));
                         }
                     } catch (Exception e) {
                         System.out.println("ERROR PIR");

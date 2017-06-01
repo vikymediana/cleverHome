@@ -28,14 +28,13 @@ public class Led extends Agent {
             while (true) {
                 try {
                     ACLMessage message = blockingReceive();
-		    System.out.println("LED: LLEGA MENSAJE!!");
                     if (message != null) {
                         if (message.getContentObject() != null
                                 && message.getContentObject() instanceof  Message) {
                             Message mesageContent = (Message)message.getContentObject();
 
                             if (mesageContent.getStatus().getStatus() == InternalStatusAgent.Status.OFF){
-				System.out.println("LED: LLEGA MENSAJE : OFF");
+				                System.out.println("LED: LLEGA MENSAJE : OFF");
                                 pin.low();
                             }else {
                                 System.out.println("LED: LLEGA MENSAJE : ON");
