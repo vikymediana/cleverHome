@@ -1,9 +1,11 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * Created by Javi on 28/05/2017.
  */
-public class InternalStatusAgent {
+public class InternalStatusAgent implements Serializable{
 
     private AgentType agentType;
     private Status status;
