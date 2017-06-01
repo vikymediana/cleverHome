@@ -28,6 +28,7 @@ public class InternalStatusAgent {
 
         this.agentType = agentType;
         this.status = status;
+        System.out.print("Prueba");
     }
 
     public enum AgentType {
