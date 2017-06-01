@@ -9,6 +9,7 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 import message.Message;
+import model.InternalStatusAgent;
 
 /**
  * Created by jlarque on 26/05/2017.
@@ -33,7 +34,7 @@ public class Led extends Agent {
                                 && message.getContentObject() instanceof  Message) {
                             Message mesageContent = (Message)message.getContentObject();
 
-                            if (mesageContent.getStatus() == null){
+                            if (mesageContent.getStatus().getStatus() == InternalStatusAgent.Status.OFF){
 				System.out.println("LED: LLEGA MENSAJE : OFF");
                                 pin.low();
                             }else {

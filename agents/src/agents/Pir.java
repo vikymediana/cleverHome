@@ -41,12 +41,12 @@ public class Pir extends Agent {
                     try {
                         if (event.getState().isHigh()) {
                             System.out.println("Motion Detected!");
-                            message.setContentObject(new Message(null));
+                            message.setContentObject(new Message(new InternalStatusAgent(InternalStatusAgent.Status.ON, InternalStatusAgent.AgentType.PIR)));
                         }
 
                         if (event.getState().isLow()) {
                             System.out.println("All is quiet...");
-                            message.setContentObject(new Message(null));
+                            message.setContentObject(new Message(new InternalStatusAgent(InternalStatusAgent.Status.OFF, InternalStatusAgent.AgentType.LED)));
                         }
                     } catch (Exception e) {
                         System.out.println("ERROR PIR");
