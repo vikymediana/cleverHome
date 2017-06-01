@@ -12,6 +12,7 @@ public class Message implements Serializable {
 
     public Message (InternalStatusAgent status) {
         setStatus(status);
+        System.out.println("sdfg");
     }
     public InternalStatusAgent getStatus() {
         return status;
