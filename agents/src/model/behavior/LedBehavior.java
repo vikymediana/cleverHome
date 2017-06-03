@@ -62,11 +62,23 @@ public class LedBehavior extends SimpleBehaviour {
 
     public boolean compareToLowLed(Message message) {
 
-    return MessageUtils.compare(fieldsToLowLed, message);
-
+        Iterator<Map.Entry<String, Class<? extends Serializable>>> iterator = fieldsToLowLed.entrySet().iterator();
+        for (Map.Entry<String, Class<? extends Serializable>> entry = iterator.next(); iterator.hasNext() ;  ) {
+            if ( message.getMap().containsKey(entry.getKey()) && message.getMap().get(entry.getKey()).equals(entry.getValue()) == false ){
+                return false;
+            }
+        }
+        return true;
     }
     public boolean compareToHighLed(Message message) {
-        return MessageUtils.compare(fieldsToHigLed, message);
+
+        Iterator<Map.Entry<String, Class<? extends Serializable>>> iterator = fieldsToHigLed.entrySet().iterator();
+        for (Map.Entry<String, Class<? extends Serializable>> entry = iterator.next(); iterator.hasNext() ;  ) {
+            if ( message.getMap().containsKey(entry.getKey()) && message.getMap().get(entry.getKey()).equals(entry.getValue()) == false ){
+                return false;
+            }
+        }
+        return true;
     }
 
 }
