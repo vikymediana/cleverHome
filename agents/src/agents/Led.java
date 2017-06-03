@@ -37,10 +37,10 @@ public class Led extends model.agents.Led {
         mapLow.put("powerStatus", PowerStatus.LOW);
 
         Map mapHigh = new HashMap<String,String>();
-        mapLow.put("agentType", AgentType.PIR);
-        mapLow.put("powerStatus", PowerStatus.HIGH);
+        mapHigh.put("agentType", AgentType.PIR);
+        mapHigh.put("powerStatus", PowerStatus.HIGH);
 
-        addBehaviour(new LedBehavior(RaspiPin.GPIO_08,mapLow,null));
+        addBehaviour(new LedBehavior(RaspiPin.GPIO_08,mapLow,mapHigh));
 
     }
 }
