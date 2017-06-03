@@ -16,6 +16,7 @@ import java.util.Optional;
  */
 public class Temperature extends Agent {
 
+
     static {
         String architecture = System.getProperty("os.arch");
         String library = String.format("/libdht11-%s.so", architecture);
