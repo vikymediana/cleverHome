@@ -57,7 +57,7 @@ public class PirBehavior extends Behaviour{
                         message.setContentObject(new Message(map));
                     }
 
-                    if (event.getState().isLow()) {
+                    else if (event.getState().isLow()) {
                         System.out.println("All is quiet...");
                         Map<String,String> map = new HashMap<String, String>();
                         map.put("agentType", AgentType.PIR.name());
