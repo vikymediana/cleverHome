@@ -18,8 +18,6 @@ import java.util.Map;
 public class Led extends model.agents.Led {
 
 
-    AgentsDescription agent = AgentsDescription.LED1;
-
     @Override
     public String getId() {
         return "LED1";
@@ -34,7 +32,7 @@ public class Led extends model.agents.Led {
     @Override
     public void setup(){
 
-        RegisterUtils.register(this,agent,getAID());
+        RegisterUtils.register(this,getId(),getAID());
 
         Map mapLow = new HashMap<String,String>();
         mapLow.put("agentType", AgentType.PIR);

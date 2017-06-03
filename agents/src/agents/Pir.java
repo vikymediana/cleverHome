@@ -19,7 +19,6 @@ import java.util.List;
 public class Pir extends model.agents.Pir {
 
 
-    AgentsDescription agent = AgentsDescription.PIR1;
     private List<AID> agentsAid;
 
     @Override

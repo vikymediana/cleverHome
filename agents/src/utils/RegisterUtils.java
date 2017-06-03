@@ -1,6 +1,5 @@
 package utils;
 
-import agents.AgentsDescription;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.domain.DFService;
@@ -16,11 +15,11 @@ import java.util.List;
  */
 public class RegisterUtils {
 
-    public static void register(Agent agent , AgentsDescription agentDescription, AID aid) {
+    public static void register(Agent agent , String agentDescription, AID aid) {
         // Registro del servicio en las paginas amarillas.
         ServiceDescription servicio = new ServiceDescription();
         servicio.setType("iot");
-        servicio.setName(agentDescription.getId());
+        servicio.setName(agentDescription);
 
         // Descripcion del agente
         DFAgentDescription descripcion = new DFAgentDescription();
