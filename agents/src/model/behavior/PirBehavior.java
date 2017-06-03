@@ -44,7 +44,7 @@ public class PirBehavior extends Behaviour{
                 message.setSender(getAgent().getAID());
                 message.setLanguage("Castellano");
 
-                for (AID aid : getAgentsAid()) {
+                for (AID aid : agentsAid) {
                     message.addReceiver(aid);
                 }
 
