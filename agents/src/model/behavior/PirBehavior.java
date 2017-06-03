@@ -55,8 +55,6 @@ public class PirBehavior extends Behaviour{
                         map.put("agentType", AgentType.PIR.name());
                         map.put("powerStatus", PowerStatus.HIGH.name());
                         message.setContentObject(new Message(map));
-                        ItemDAO dao = new ItemDAO();
-                        dao.updateStatus("move_sensor", "HIGH");
                     }
 
                     else if (event.getState().isLow()) {
@@ -65,44 +63,42 @@ public class PirBehavior extends Behaviour{
                         map.put("agentType", AgentType.PIR.name());
                         map.put("powerStatus", PowerStatus.LOW.name());
                         message.setContentObject(new Message(map));
-                        ItemDAO dao = new ItemDAO();
-                        dao.updateStatus("move_sensor", "LOW");
                     }
                 } catch (Exception e) {
                     System.out.println("ERROR PIR");
                 }
                 getAgent().send(message);
 
-                // Mandar a agente de base de datos
-                ACLMessage dbMessage = new ACLMessage(ACLMessage.REQUEST);
-                dbMessage.setSender(getAgent().getAID());
-                dbMessage.setLanguage("Castellano");
-
-                for (AID aid : agentsAid) {
-                    dbMessage.addReceiver(aid);
-                }
-
-                try {
-                    if (event.getState().isHigh()) {
-                        Map<String,String> map = new HashMap<>();
-                        map.put("messageType", "updateStatus");
-                        map.put("itemId", "move_sensor");
-                        map.put("newValue", PowerStatus.HIGH.name());
-                        message.setContentObject(new Message(map));
-                    }
-
-                    else if (event.getState().isLow()) {
-                        System.out.println("All is quiet...");
-                        Map<String,String> map = new HashMap<>();
-                        map.put("messageType", "updateStatus");
-                        map.put("itemId", "move_sensor");
-                        map.put("newValue", PowerStatus.LOW.name());
-                        message.setContentObject(new Message(map));
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                getAgent().send(message);
+//                // Mandar a agente de base de datos
+//                ACLMessage dbMessage = new ACLMessage(ACLMessage.REQUEST);
+//                dbMessage.setSender(getAgent().getAID());
+//                dbMessage.setLanguage("Castellano");
+//
+//                for (AID aid : agentsAid) {
+//                    dbMessage.addReceiver(aid);
+//                }
+//
+//                try {
+//                    if (event.getState().isHigh()) {
+//                        Map<String,String> map = new HashMap<>();
+//                        map.put("messageType", "updateStatus");
+//                        map.put("itemId", "move_sensor");
+//                        map.put("newValue", PowerStatus.HIGH.name());
+//                        message.setContentObject(new Message(map));
+//                    }
+//
+//                    else if (event.getState().isLow()) {
+//                        System.out.println("All is quiet...");
+//                        Map<String,String> map = new HashMap<>();
+//                        map.put("messageType", "updateStatus");
+//                        map.put("itemId", "move_sensor");
+//                        map.put("newValue", PowerStatus.LOW.name());
+//                        message.setContentObject(new Message(map));
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                getAgent().send(message);
             }
 
         });

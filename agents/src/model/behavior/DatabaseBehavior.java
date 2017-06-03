@@ -26,8 +26,8 @@ public class DatabaseBehavior extends SimpleBehaviour {
                     if (message.getContentObject() != null && message.getContentObject() instanceof Message) {
                         Message messageContent = (Message)message.getContentObject();
                         if (compareToUpdateStatus(messageContent)) {
-                            String itemId = messageContent.getMap().get("itemId");
-                            String newStatus = messageContent.getMap().get("newStatus");
+                            String itemId = messageContent.getMap().get("agentType");
+                            String newStatus = messageContent.getMap().get("powerStatus");
                             itemDAO.updateStatus(itemId, newStatus);
                         }
                     }
@@ -45,7 +45,7 @@ public class DatabaseBehavior extends SimpleBehaviour {
     }
 
     public Boolean compareToUpdateStatus(Message message) {
-        return message.getMap().containsKey("messageType") && message.getMap().get("messageType").equals("updateStatus");
+        return message.getMap().containsKey("agentType") && message.getMap().containsKey("powerStatus");
     }
 
 }
