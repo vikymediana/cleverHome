@@ -1,14 +1,8 @@
 package agents;
 
-import com.pi4j.io.gpio.*;
-import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
-import com.pi4j.io.gpio.event.GpioPinListenerDigital;
+import com.pi4j.io.gpio.RaspiPin;
 import jade.core.AID;
-import jade.core.Agent;
-import jade.core.behaviours.SimpleBehaviour;
-import jade.lang.acl.ACLMessage;
 import model.behavior.PirBehavior;
-import model.message.Message;
 import utils.RegisterUtils;
 
 import java.util.List;

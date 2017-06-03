@@ -22,7 +22,7 @@ public class LedBehavior extends SimpleBehaviour {
     final Map<String, Class< ? extends Serializable>> fieldsToHigLed;
 
     final GpioController gpioController = GpioFactory.getInstance();
-    final GpioPinDigitalOutput pin = gpioController.provisionDigitalOutputPin(gpioPin, "MyLED", PinState.LOW); // FIXME mismo identificador para todos
+    final GpioPinDigitalOutput pin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_08, "MyLED", PinState.LOW); // FIXME mismo identificador para todos
 
     public LedBehavior(Pin gpioPin, Map<String, Class< ? extends Serializable>> fieldsToLowLed, Map<String, Class< ? extends Serializable>> fieldsToHigLed) {
         this.gpioPin = gpioPin;

@@ -2,7 +2,6 @@ package model.agents;
 
 import model.AgentType;
 import model.PowerStatus;
-import model.agents.Agent;
 
 /**
  * Created by Javi on 03/06/2017.

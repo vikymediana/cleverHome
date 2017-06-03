@@ -1,8 +1,6 @@
 package agents;
 
 import com.pi4j.io.gpio.*;
-import jade.core.behaviours.SimpleBehaviour;
-import jade.lang.acl.ACLMessage;
 import model.AgentType;
 import model.PowerStatus;
 import model.behavior.LedBehavior;

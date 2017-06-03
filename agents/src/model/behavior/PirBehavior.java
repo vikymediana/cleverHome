@@ -23,7 +23,7 @@ public class PirBehavior extends Behaviour{
     private Pin pin;
     final List<AID> agentsAid;
     final GpioController gpioSensor = GpioFactory.getInstance();
-    final GpioPinDigitalInput sensor = gpioSensor.provisionDigitalInputPin(pin, PinPullResistance.PULL_DOWN);
+    final GpioPinDigitalInput sensor = gpioSensor.provisionDigitalInputPin(RaspiPin.GPIO_00, PinPullResistance.PULL_DOWN);
 
 
     public PirBehavior (List<AID> agentsAid, Pin pin) {
