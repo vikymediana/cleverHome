@@ -8,6 +8,7 @@ import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 import model.AgentType;
 import model.PowerStatus;
+import model.agents.ItemDAO;
 import model.message.Message;
 
 import java.io.Serializable;
@@ -55,6 +56,8 @@ public class PirBehavior extends Behaviour{
                         map.put("agentType", AgentType.PIR.name());
                         map.put("powerStatus", PowerStatus.HIGH.name());
                         message.setContentObject(new Message(map));
+                        ItemDAO dao = new ItemDAO();
+                        dao.updateStatus("move_sensor", "HIGH");
                     }
 
                     else if (event.getState().isLow()) {
@@ -63,6 +66,8 @@ public class PirBehavior extends Behaviour{
                         map.put("agentType", AgentType.PIR.name());
                         map.put("powerStatus", PowerStatus.LOW.name());
                         message.setContentObject(new Message(map));
+                        ItemDAO dao = new ItemDAO();
+                        dao.updateStatus("move_sensor", "LOW");
                     }
                 } catch (Exception e) {
                     System.out.println("ERROR PIR");
