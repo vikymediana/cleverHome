@@ -13,10 +13,11 @@ public class MessageUtils {
 
     public static boolean compare(Map<String, Class< ? extends Serializable>> map, Message message) {
         Iterator<Map.Entry<String, Class<? extends Serializable>>> iterator = map.entrySet().iterator();
-        boolean ok2 = true;
-        for (Map.Entry<String, Class<? extends Serializable>> entry = iterator.next(); ok2 && iterator.hasNext() ;  ) {
-            ok2 = message.getMap().containsKey(entry.getKey()) && message.getMap().get(entry.getKey()).equals(entry.getValue());
+        for (Map.Entry<String, Class<? extends Serializable>> entry = iterator.next(); iterator.hasNext() ;  ) {
+            if ( message.getMap().containsKey(entry.getKey()) && message.getMap().get(entry.getKey()).equals(entry.getValue()) == false ){
+                return false;
+            }
         }
-        return ok2;
+        return true;
     }
 }
