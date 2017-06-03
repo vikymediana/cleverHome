@@ -60,7 +60,7 @@ public class LedBehavior extends SimpleBehaviour {
         return false;
     }
 
-    public boolean compareToLowLed(Message message) {
+    public Boolean compareToLowLed(Message message) {
 
         Iterator<Map.Entry<String, Class<? extends Serializable>>> iterator = fieldsToLowLed.entrySet().iterator();
         for (Map.Entry<String, Class<? extends Serializable>> entry = iterator.next(); iterator.hasNext() ;  ) {
@@ -70,7 +70,7 @@ public class LedBehavior extends SimpleBehaviour {
         }
         return true;
     }
-    public boolean compareToHighLed(Message message) {
+    public Boolean compareToHighLed(Message message) {
 
         Iterator<Map.Entry<String, Class<? extends Serializable>>> iterator = fieldsToHigLed.entrySet().iterator();
         for (Map.Entry<String, Class<? extends Serializable>> entry = iterator.next(); iterator.hasNext() ;  ) {
