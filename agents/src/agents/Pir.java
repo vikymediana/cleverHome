@@ -28,6 +28,8 @@ public class Pir extends model.agents.Pir {
 		Thread.sleep(300);
 	}catch(Exception e){}
         addBehaviour(new PirBehavior(getAgentsAid(), RaspiPin.GPIO_00));
+
+        System.out.print("PIR SALE");
     }
 
     public List<AID> getAgentsAid() {
