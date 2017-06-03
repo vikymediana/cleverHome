@@ -33,12 +33,12 @@ public class Led extends model.agents.Led {
         RegisterUtils.register(this,getId(),getAID());
 
         Map mapLow = new HashMap<String,String>();
-        mapLow.put("agentType", AgentType.PIR);
-        mapLow.put("powerStatus", PowerStatus.LOW);
+        mapLow.put("agentType", AgentType.PIR.name());
+        mapLow.put("powerStatus", PowerStatus.LOW.name());
 
         Map mapHigh = new HashMap<String,String>();
-        mapHigh.put("agentType", AgentType.PIR);
-        mapHigh.put("powerStatus", PowerStatus.HIGH);
+        mapHigh.put("agentType", AgentType.PIR.name());
+        mapHigh.put("powerStatus", PowerStatus.HIGH.name());
 
         addBehaviour(new LedBehavior(RaspiPin.GPIO_08,mapLow,mapHigh));
 
