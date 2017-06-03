@@ -1,4 +1,4 @@
-package model.agents;
+package model.database;
 
 /**
  * Created by victoria on 3/06/17.

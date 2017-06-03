@@ -1,4 +1,4 @@
-package model.agents;
+package model.database;
 
 import java.sql.*;
 

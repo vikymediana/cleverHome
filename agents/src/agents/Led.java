@@ -29,7 +29,6 @@ public class Led extends model.agents.Led {
 
     @Override
     public void setup(){
-        System.out.print("HAGO ALGOOOO");
         RegisterUtils.register(this,getId(),getAID());
 
         Map mapLow = new HashMap<String,String>();
@@ -41,7 +40,6 @@ public class Led extends model.agents.Led {
         mapHigh.put("powerStatus", PowerStatus.HIGH.name());
 
         addBehaviour(new LedBehavior(RaspiPin.GPIO_08,mapLow,mapHigh));
-        System.out.print("ARRANCADOOOO");
 
     }
 }

@@ -8,10 +8,9 @@ import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 import model.AgentType;
 import model.PowerStatus;
-import model.agents.ItemDAO;
+import model.database.ItemDAO;
 import model.message.Message;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
