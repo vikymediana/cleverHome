@@ -4,11 +4,11 @@ package model;
  * Created by Javi on 03/06/2017.
  */
 public enum AgentType {
-    TEMPERATURE,
+    BUZZER,
+    DB,
     CAMERA,
     FAN,
-    BUZZER,
     LED,
     PIR,
-    DB;
+    TEMPERATURE;
 }
