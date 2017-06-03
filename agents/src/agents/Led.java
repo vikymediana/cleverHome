@@ -40,7 +40,7 @@ public class Led extends model.agents.Led {
         mapHigh.put("agentType", AgentType.PIR.name());
         mapHigh.put("powerStatus", PowerStatus.HIGH.name());
 
-        addBehaviour(new LedBehavior(RaspiPin.GPIO_08,mapLow,mapHigh));
+        addBehaviour(new LedBehavior(RaspiPin.GPIO_08,mapLow,null));
         System.out.print("ARRANCADOOOO");
 
     }
