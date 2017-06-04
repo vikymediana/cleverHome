@@ -8,16 +8,10 @@ import model.AgentType;
  */
 public abstract class Agent extends jade.core.Agent {
 
-    private String id;
-
-    private String agentType;
-
     public abstract AgentType getAgentType();
-
 
     public abstract String getId();
 
     public abstract Message getMessage();
-
 
 }

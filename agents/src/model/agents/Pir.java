@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public abstract class Pir extends Agent {
 
-    PowerStatus powerStatus  = PowerStatus.LOW;
+    PowerStatus powerStatus = PowerStatus.LOW;
 
     @Override
     public AgentType getAgentType() {

@@ -8,7 +8,7 @@ import model.PowerStatus;
  */
 public abstract class Led extends Agent {
 
-    PowerStatus powerStatus  = PowerStatus.LOW;
+    PowerStatus powerStatus = PowerStatus.LOW;
 
     public PowerStatus getPowerStatus() {
         return powerStatus;
