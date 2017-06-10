@@ -16,10 +16,10 @@ public class LedBehavior extends SimpleBehaviour {
 
 
     Pin gpioPin;
-    final Map<String, Class< ? extends Serializable>> fieldsToLowLed;
-    final Map<String, Class< ? extends Serializable>> fieldsToHighLed;
+    Map<String, Class< ? extends Serializable>> fieldsToLowLed;
+    Map<String, Class< ? extends Serializable>> fieldsToHighLed;
 
-    final GpioController gpioController = GpioFactory.getInstance();
+    GpioController gpioController = GpioFactory.getInstance();
 
 
     public LedBehavior(Pin gpioPin, Map<String, Class< ? extends Serializable>> fieldsToLowLed, Map<String, Class< ? extends Serializable>> fieldsToHighLed) {

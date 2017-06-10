@@ -8,6 +8,7 @@ import model.behavior.CameraBehavior;
 import model.message.Message;
 import utils.RegisterUtils;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -32,12 +33,11 @@ public class Camera  extends Agent{
     @Override
     public void setup(){
 
-        RegisterUtils.register(this,getId(),getAID());
+        try {
+            Runtime.getRuntime().exec("raspistill --nopreview -w 448 -h 336 -q 5 -o /tmp/stream/pic.jpg -tl 1000 -t 9999999 -th 0:0:0 &");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        try{
-            Thread.sleep(300);
-        }catch(Exception e){}
-
-        addBehaviour(new CameraBehavior());
     }
 }
