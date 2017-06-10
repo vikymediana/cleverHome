@@ -20,7 +20,7 @@ public class LedBehavior extends SimpleBehaviour {
     final Map<String, Class< ? extends Serializable>> fieldsToHighLed;
 
     final GpioController gpioController = GpioFactory.getInstance();
-    final GpioPinDigitalOutput pin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_08, "MyLED", PinState.LOW); // FIXME mismo identificador para todos
+
 
     public LedBehavior(Pin gpioPin, Map<String, Class< ? extends Serializable>> fieldsToLowLed, Map<String, Class< ? extends Serializable>> fieldsToHighLed) {
         this.gpioPin = gpioPin;
@@ -31,6 +31,9 @@ public class LedBehavior extends SimpleBehaviour {
 
     @Override
     public void action() {
+
+        GpioPinDigitalOutput pin = gpioController.provisionDigitalOutputPin(gpioPin, "MyLED" + getAgent().getAID() , PinState.LOW); // FIXME mismo identificador para todos
+
         while (true) {
             try {
                 ACLMessage message = getAgent().blockingReceive();
