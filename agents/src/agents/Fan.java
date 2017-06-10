@@ -3,9 +3,7 @@ package agents;
 import com.pi4j.io.gpio.RaspiPin;
 import model.AgentType;
 import model.PowerStatus;
-import model.agents.*;
 import model.behavior.LedBehavior;
-import model.behavior.PirBehavior;
 import model.message.Message;
 import utils.RegisterUtils;
 
@@ -33,13 +31,13 @@ public class Fan extends model.agents.Led {
     public void setup(){
         RegisterUtils.register(this,getId(),getAID());
 
+
         try{
             Thread.sleep(300);
         }catch(Exception e){}
-        addBehaviour(new PirBehavior(getAgentsAid(), RaspiPin.GPIO_00));
-    }
 
-        Map mapLow = new HashMap<String,String>();
+
+    Map mapLow = new HashMap<String,String>();
         mapLow.put("agentType", AgentType.PIR.name());
         mapLow.put("powerStatus", PowerStatus.LOW.name());
 
