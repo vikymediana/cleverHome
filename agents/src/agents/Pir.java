@@ -25,10 +25,10 @@ public class Pir extends model.agents.Pir {
     public void setup(){
 
 	try{
-		Thread.sleep(300);
-	}catch(Exception e){}
-        addBehaviour(new PirBehavior(getAgentsAid(), RaspiPin.GPIO_00));
-    }
+        Thread.sleep(300);
+    }catch(Exception e){}
+    addBehaviour(new PirBehavior(getAgentsAid(), RaspiPin.GPIO_00));
+}
 
     public List<AID> getAgentsAid() {
         if (agentsAid == null) {

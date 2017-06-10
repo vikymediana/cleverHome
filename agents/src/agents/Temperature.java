@@ -1,6 +1,11 @@
 package agents;
 
+import com.pi4j.io.gpio.RaspiPin;
 import jade.core.Agent;
+import model.AgentType;
+import model.behavior.PirBehavior;
+import model.behavior.TemperatureBehaviuor;
+import model.message.Message;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,24 +19,31 @@ import java.util.Optional;
 /**
  * Created by jlarque on 26/05/2017.
  */
-public class Temperature {
+public class Temperature extends model.agents.Agent{
 
 
-    static {
-        String architecture = System.getProperty("os.arch");
-        String library = String.format("/libdht11-%s.so", architecture);
-        try (InputStream is = Temperature.class.getResourceAsStream(library)) {
-            Path path = File.createTempFile("libdht11", "so").toPath();
-            Files.copy(is, path, StandardCopyOption.REPLACE_EXISTING);
-            System.load(path.toAbsolutePath().toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public AgentType getAgentType() {
+        return AgentType.TEMPERATURE;
     }
 
+    @Override
+    public String getId() {
+        return "temperature";
+    }
 
-    private int gpio;
-    private Optional<Integer> temperature;
-    private Optional<Integer> humidity;
-    private Optional<LocalDateTime> date;
+    @Override
+    public Message getMessage() {
+        return null;
+    }
+
+    @Override
+    public void setup(){
+
+        try{
+            Thread.sleep(300);
+        }catch(Exception e){}
+        addBehaviour(new TemperatureBehaviuor());
+    }
+
 }
