@@ -39,11 +39,11 @@ public class Fan extends model.agents.Led {
 
     Map mapLow = new HashMap<String,String>();
         mapLow.put("agentType", AgentType.PIR.name());
-        mapLow.put("powerStatus", PowerStatus.LOW.name());
+        mapLow.put("powerStatus", PowerStatus.HIGH.name());
 
         Map mapHigh = new HashMap<String,String>();
         mapHigh.put("agentType", AgentType.PIR.name());
-        mapHigh.put("powerStatus", PowerStatus.HIGH.name());
+        mapHigh.put("powerStatus", PowerStatus.LOW.name());
 
         addBehaviour(new LedBehavior(RaspiPin.GPIO_04,mapLow,mapHigh));
 
