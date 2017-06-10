@@ -14,7 +14,7 @@ import java.util.Optional;
 /**
  * Created by jlarque on 26/05/2017.
  */
-public class Temperature extends Agent {
+public class Temperature {
 
 
     static {
