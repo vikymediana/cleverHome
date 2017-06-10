@@ -6,6 +6,7 @@ import model.database.ItemDAO;
 import model.message.Message;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -25,7 +26,8 @@ public class TemperatureBehaviuor extends Behaviour {
             } catch (Exception e) {
             }
             try {
-                Process p = Runtime.getRuntime().exec("sudo python AdafruitDHT.py 11 4");
+                //File file = new File("/home/pi/Documents/cleverHome/agents/src/components/AdafruitDHT.py");
+                Process p = Runtime.getRuntime().exec("sudo python /home/pi/Documents/cleverHome/agents/src/components/AdafruitDHT.py 11 4");
                 InputStream inputStream = p.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
                 StringBuilder sb = new StringBuilder();
