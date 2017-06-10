@@ -5,6 +5,7 @@ import model.AgentType;
 import model.PowerStatus;
 import model.agents.*;
 import model.behavior.LedBehavior;
+import model.behavior.PirBehavior;
 import model.message.Message;
 import utils.RegisterUtils;
 
@@ -31,6 +32,12 @@ public class Fan extends model.agents.Led {
     @Override
     public void setup(){
         RegisterUtils.register(this,getId(),getAID());
+
+        try{
+            Thread.sleep(300);
+        }catch(Exception e){}
+        addBehaviour(new PirBehavior(getAgentsAid(), RaspiPin.GPIO_00));
+    }
 
         Map mapLow = new HashMap<String,String>();
         mapLow.put("agentType", AgentType.PIR.name());
