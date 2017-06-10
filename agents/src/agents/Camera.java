@@ -34,7 +34,7 @@ public class Camera  extends Agent{
     public void setup(){
 
         try {
-            Runtime.getRuntime().exec("raspistill --nopreview -w 448 -h 336 -q 5 -o /tmp/stream/pic.jpg -tl 1000 -t 9999999 -th 0:0:0 &");
+            Runtime.getRuntime().exec("raspistill --nopreview -w 448 -h 336 -q 5 -o /tmp/stream/pic.jpg -tl 1000 -t 9999999 -th 0:0:0");
         } catch (IOException e) {
             e.printStackTrace();
         }
