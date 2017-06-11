@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*-
 from urllib2 import *
 import urllib
 import json
 import sys
 
 MY_API_KEY="AIzaSyD7nMq1-MZsX8X9nfidj_wwVoW-jttwqhY"
-messageTitle = sys.argv[1]
-messageBody = sys.argv[2]
+messageTitle = "Intrusión detectada"
+messageBody = "Revise las imágenes de su inmueble"
 
 data={
     "to" : "/topics/myhome",
