@@ -55,6 +55,7 @@ public class PirBehavior extends Behaviour{
                         map.put("agentType", AgentType.PIR.name());
                         map.put("powerStatus", PowerStatus.HIGH.name());
                         message.setContentObject(new Message(map));
+                        Process p = Runtime.getRuntime().exec("sudo python /home/pi/Documents/cleverHome/agents/src/components/sendNotification.py");
                     }
 
                     else if (event.getState().isLow()) {
